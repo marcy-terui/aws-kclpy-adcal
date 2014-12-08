@@ -1,0 +1,14 @@
+[supervisord]
+http_port=/var/tmp/supervisor.sock
+logfile=/var/log/supervisor/supervisord.log
+logfile_maxbytes=50MB
+logfile_backups=10
+loglevel=info
+pidfile=/var/run/supervisord.pid
+nodaemon=false
+
+[program:<%= @name %>]
+command=<%= @command %>
+autostart=true
+autorestart=true
+user=root
